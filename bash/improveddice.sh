@@ -11,7 +11,6 @@ range=6
 bias=1
 dice1=$(( RANDOM % range + bias))
 dice2=$(( RANDOM % range + bias))
-
 echo "$dice1 , $dice2 rolled..."
 
 # Task 2:
