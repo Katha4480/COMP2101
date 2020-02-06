@@ -30,7 +30,7 @@
 # finding external information relies on curl being installed and relies on live internet connection
 # awk is used to extract only the data we want displayed from the commands which produce extra data
 # this command is ugly done this way, so generating the output data into variables is recommended to make the script more readable.
-# e.g. 
+# e.g.
 #   interface_name=$(ip a |awk '/: e/{gsub(/:/,"");print $2}')
 
 myhostname=$(hostname)
@@ -40,7 +40,7 @@ lan_hostname=$(getent hosts $lan_ipaddress | awk '{print $2}')
 external_ip=$(curl -s icanhazip.com)
 external_name=$(getent hosts $external_ip | awk '{print $2}')
 router_address=$(route -n | grep 'UG[ \t]' | awk '{print $2}')
-router_hostname=$(route | grep "default" | awk '{ print $2 }')
+router_hostname=$(getent hosts | grep "$router_address" | awk '{ print $2}')
 
 cat <<EOF
 Hostname        : $myhostname
@@ -51,4 +51,3 @@ External Name   : $external_name
 Router Address  : $router_address
 Router Hostname : $router_hostname
 EOF
-

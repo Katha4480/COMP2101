@@ -23,6 +23,18 @@ if [ $myString = $referenceString ]; then
     if [ $myString = $referenceString ]; then
       echo "$completed"
       echo
+      else
+        echo "$ferror"
+        read -s -p "Enter the String:" myString
+        if [ $myString = $referenceString ]; then
+          echo "$completed"
+          echo
+          else
+            echo "$ferror"
+            read -s -p "Enter the String:" myString
+    if [ $myString = $referenceString ]; then
+      echo "$completed"
+      echo
     else
       echo
       echo "$ferror"
@@ -35,4 +47,6 @@ if [ $myString = $referenceString ]; then
       echo "$ferror"
     fi
   fi
+fi
+fi
 fi
