@@ -60,7 +60,7 @@ else
 	echo "Varbose mode is Off."
 fi
 if [ $dstore -gt 0 ]; then
-	echo "Debug Mode is On with level $d."
+	echo "Debug Mode is On with level $dstore."
 else
 	echo "Debug Mode is Off."
 fi
